@@ -105,6 +105,18 @@ export default function Header({ content, courses, progressService }) {
                   )}
                 </Popover>
               </Popover.Group>
+              <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                <span
+                  className="text-gray-500 font-medium hover:text-gray-900 cursor-pointer"
+                  data-test="reset-data"
+                  onClick={() => {
+                    localStorage.removeItem("progressState")
+                    location.reload()
+                  }}
+                >
+                  Reset data
+                </span>
+              </div>
             </div>
           </div>
         </div>

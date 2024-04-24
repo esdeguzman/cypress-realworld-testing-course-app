@@ -1,8 +1,50 @@
 import dynamic from "next/dynamic"
+import { useEffect, useState } from "react"
 
 const HomeProgress = dynamic(() => import("./HomeProgress"), {})
 
 export default function HomeCourses({ courses, content, progressService }) {
+  const [lessons, setLessons] = useState([])
+
+  useEffect(() => {
+    setLessons(() => {
+      return JSON.parse(localStorage.getItem("progressState"))?.context.lessons
+    })
+  }, [])
+
+  const setButtonTitle = (title) => {
+    let buttonTitle
+
+    if (!lessons) {
+      return "Get Started"
+    }
+
+    if (
+      title === "Testing Your First Next.js Application" &&
+      lessons.filter((item) =>
+        item.id.includes("testing-your-first-application")
+      ).length >= 3
+    ) {
+      buttonTitle = "Course Completed"
+    } else if (
+      title == "Testing Foundations" &&
+      lessons.filter((item) => item.id.includes("testing-foundations"))
+        .length >= 3
+    ) {
+      buttonTitle = "Course Completed"
+    } else if (
+      title == "Cypress Fundamentals" &&
+      lessons.filter((item) => item.id.includes("cypress-fundamentals"))
+        .length == 3
+    ) {
+      buttonTitle = "Course Completed"
+    } else {
+      buttonTitle = "Get Started"
+    }
+
+    return buttonTitle
+  }
+
   return (
     <div className="relative bg-white pt-16 pb-32 overflow-hidden">
       {courses.map((course, index) => (
@@ -35,7 +77,7 @@ export default function HomeCourses({ courses, content, progressService }) {
                           href={`/${content[course].slug}`}
                           className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-blue-600"
                         >
-                          Get started
+                          {setButtonTitle(content[course].title)}
                         </a>
                       </div>
                     </div>
@@ -79,7 +121,7 @@ export default function HomeCourses({ courses, content, progressService }) {
                           href={`/${content[course].slug}`}
                           className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-blue-600"
                         >
-                          Get started
+                          {setButtonTitle(content[course].title)}
                         </a>
                       </div>
                     </div>
