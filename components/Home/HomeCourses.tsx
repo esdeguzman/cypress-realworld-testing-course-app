@@ -31,7 +31,7 @@ export default function HomeCourses({ courses, content, progressService }) {
       lessons.filter((item) => item.id.includes("testing-foundations"))
         .length >= 3
     ) {
-      buttonTitle = "Course Completed"
+      buttonTitle = "Get Started"
     } else if (
       title == "Cypress Fundamentals" &&
       lessons.filter((item) => item.id.includes("cypress-fundamentals"))
