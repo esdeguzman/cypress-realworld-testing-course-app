@@ -7,7 +7,7 @@ type Inputs = {
 
 const navigation = {
   main: [
-    { name: "Next.js", href: "https://nextjs.org/" },
+    { name: "Node.js", href: "https://nextjs.org/" },
     {
       name: "Cypress",
       href: "https://www.cypress.io/",
