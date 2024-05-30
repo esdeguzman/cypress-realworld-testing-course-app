@@ -128,7 +128,7 @@
         ]
       },
       {
-        "title": "Cypress Runs in the Browser",
+        "title": "Cypress Run in the Browser",
         "slug": "cypress-runs-in-the-browser",
         "description": "Cypress's architecture, unlike most other testing tools, runs inside of the browser. This means that your tests are being executed in the same environment as your application.",
         "challenges": [
