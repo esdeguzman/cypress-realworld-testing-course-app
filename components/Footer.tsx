@@ -58,17 +58,13 @@ export default function Footer() {
             The latest updates sent to your inbox.
           </p> */}
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="sm:flex">
+          <form className="sm:flex">
       <div className="min-w-0 flex-1">
         <label htmlFor="email" className="sr-only">
           Subscribe for Updates
         </label>
         <input
           data-test="email-input-footer"
-          {...register("email", {
-            required: "Email is required",
-          })}
-          id="email"
           type="email"
           name="email"
           placeholder="Subscribe for Updates"
