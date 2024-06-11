@@ -1,3 +1,7 @@
+:root {
+  --dslate: darkslategray;
+}
+
 /* 
   Lesson Content
 */
@@ -68,7 +72,7 @@ input[type='search']:focus {
 }
 
 span {
-  color: darkslategray !important;
+  color: var(--dslate) !important;
 }
 
 /* Safari-specific styles */
