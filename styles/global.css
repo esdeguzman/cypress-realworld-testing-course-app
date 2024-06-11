@@ -1,5 +1,5 @@
 :root {
-  --dslate: darkslategray;
+  --dslate: blue;
 }
 
 /* 
@@ -71,7 +71,7 @@ input[type='search']:focus {
   --tw-ring-color: none;
 }
 
-span {
+h1 > span {
   color: var(--dslate) !important;
 }
 
