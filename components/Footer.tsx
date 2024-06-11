@@ -65,10 +65,9 @@ export default function Footer() {
         </label>
         <input
           data-test="email-input-footer"
-          type="email"
           name="email"
           placeholder="Subscribe for Updates"
-          className="block w-full px-4 py-3 rounded-md border-2text-base text-gray-900 placeholder-gray-500"
+          className="block border w-full px-4 py-3 rounded-md border-2text-base text-gray-900 placeholder-gray-500"
         />
         {errors.email && (
           <span className="text-red-500" data-test="error-message">
