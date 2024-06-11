@@ -1,4 +1,5 @@
-const subscribed = ["john@example.com"]
+const onb = ["@orangeandbronze.com"]
+const subscribed = ["dave@sample.com"]
 
 export default function handler(req, res) {
   if (!req.rawHeaders.includes("application/json")) {
@@ -12,10 +13,10 @@ export default function handler(req, res) {
   if (
     req.method === "POST" &&
     req.body.email &&
-    !subscribed.includes(req.body.email)
+    req.body.email.includes(onb)
   ) {
     res.status(200).json({
-      message: `Success: ${req.body.email} has been successfully subscribed`,
+      message: `Hi ${req.body.email.split('@')[0]}, you've stumbled upon an Easter Egg! Head over to orangeandbronze.com, raise your hand, and recite O&B's motto as seen on the website to claim a 100 pesos GCash balance!`,
     })
 
     return
@@ -26,8 +27,20 @@ export default function handler(req, res) {
     req.body.email &&
     subscribed.includes(req.body.email)
   ) {
-    res.status(403).json({
-      message: `Error: ${req.body.email} already exists. Please use a different email address.`,
+    res.status(200).json({
+      message: `Subscriber: You're already subscribed! Thanks!`,
+    })
+
+    return
+  }
+
+  if (
+    req.method === "POST" &&
+    req.body.email &&
+    !subscribed.includes(req.body.email)
+  ) {
+    res.status(200).json({
+      message: `Success: ${req.body.email} has been successfully subscribed`,
     })
 
     return
