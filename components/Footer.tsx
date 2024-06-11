@@ -51,7 +51,10 @@ export default function Footer() {
         {/* Email Subscription */}
         <div className="py-8 lg:flex lg:items-center lg:justify-between lg:max-w-7xl lg:mx-auto xl:mt-0">
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+            <h3 
+              className="text-sm font-semibold text-gray-400 tracking-wider uppercase"
+              style={{ color: "#4287f5d4" }}
+            >
               Subscribe for updates
             </h3>
             {/* <p className="mt-2 text-base text-gray-500">

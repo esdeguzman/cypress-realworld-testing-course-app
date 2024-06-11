@@ -45,7 +45,6 @@ export default function Subscribe() {
           type="email"
           name="email"
           placeholder="Subscribe for Updates"
-          style={{ textIndent: 10 }}
           className="block w-full px-4 py-3 rounded-md border-2text-base text-gray-900 placeholder-gray-500"
         />
         {errors.email && (
