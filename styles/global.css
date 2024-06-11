@@ -67,6 +67,10 @@ input[type='search']:focus {
   --tw-ring-color: none;
 }
 
+img {
+  box-shadow: 10px 10px lightgray !important;
+}
+
 @supports (-ms-ime-align:auto) {
     img {
       height: 150% !important;
