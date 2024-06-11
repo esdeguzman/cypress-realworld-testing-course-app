@@ -57,6 +57,16 @@ export default function Subscribe() {
             {isSubmitted}
           </div>
         )}
+        {formState.isSubmitted && isSubmitted.includes("Subscriber:") && (
+          <div className="text-orange-500" data-test="subscriber-message">
+            {isSubmitted}
+          </div>
+        )}
+        {formState.isSubmitted && isSubmitted.includes("Easter") && (
+          <div className="text-blue-500" data-test="easter-message">
+            {isSubmitted}
+          </div>
+        )}
         {formState.isSubmitted && isSubmitted.includes("Error:") && (
           <div className="text-red-500" data-test="server-error-message">
             {isSubmitted}
