@@ -16,7 +16,7 @@ export default function handler(req, res) {
     req.body.email.includes(onb)
   ) {
     res.status(200).json({
-      message: `Hi ${req.body.email.split('@')[0]}, you've stumbled upon an Easter Egg! Head over to orangeandbronze.com, raise your hand, and recite O&B's motto as seen on the website to claim a 100 pesos GCash balance!`,
+      message: `Hi ${req.body.email.split('@')[0]}, you've stumbled upon an Easter Egg! Head over to orangeandbronze.com, raise your hand, and recite O&B's motto as seen on the website to claim a 100 pesos GCash balance! Quickly, as this offer is only valid for one use!`,
     })
 
     return
