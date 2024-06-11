@@ -68,12 +68,14 @@ input[type='search']:focus {
 }
 
 img {
-  box-shadow: 10px 10px lightgray !important;
+  box-shadow: 10px 10px lightgray;
 }
 
-@supports (-ms-ime-align:auto) {
-    img {
-      height: 150% !important;
-      width: 50% !important;
-    }
+/* Safari-specific styles */
+@supports (-webkit-touch-callout: none) {
+  /* Apply styles only if the browser supports Safari-specific CSS properties */
+  img {
+    height: 150% !important;
+    width: 50% !important;
+  }
 }
